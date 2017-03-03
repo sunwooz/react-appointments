@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
   root 'appointments#index'
+  get '/nav' => 'pages#nav'
+
+  get '/appointments' => 'appointments#index'
+  post '/appointments' => 'appointments#create'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   resource :appointments
+  resources :posts
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
